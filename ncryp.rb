@@ -5,24 +5,29 @@
 class Ncryp < Formula
   desc "Weak Cryptography for Learners"
   homepage ""
-  version "0.3.0"
+  version "0.4.0"
   bottle :unneeded
 
-  if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/nobishino/ncryp/releases/download/v0.3.0/ncryp_0.3.0_Darwin_x86_64.tar.gz"
-    sha256 "870515e785f15b35948995ab573444a26c31442fe0069ba0e779d09fbd76aab9"
+  on_macos do
+    if Hardware::CPU.intel?
+      url "https://github.com/nobishino/ncryp/releases/download/v0.4.0/ncryp_0.4.0_Darwin_x86_64.tar.gz"
+      sha256 "4702b379cd6d7f9b43f8c124066ecacd5dbf7f42a84d28eeb2bacdc2843869b1"
+    end
+    if Hardware::CPU.arm?
+      url "https://github.com/nobishino/ncryp/releases/download/v0.4.0/ncryp_0.4.0_Darwin_arm64.tar.gz"
+      sha256 "c75191359ff76adb6fc54f5e57705c613b715912b71c548d059dfc8d1b6af00d"
+    end
   end
-  if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/nobishino/ncryp/releases/download/v0.3.0/ncryp_0.3.0_Darwin_arm64.tar.gz"
-    sha256 "4eaa984a3645a6156dc4e55261ee25191d1583c10f924c6737dd2046856ee59c"
-  end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/nobishino/ncryp/releases/download/v0.3.0/ncryp_0.3.0_Linux_x86_64.tar.gz"
-    sha256 "06ccde85c04516bc9eefaf849bf18ed3c03916928b0281783600fd003d618971"
-  end
-  if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/nobishino/ncryp/releases/download/v0.3.0/ncryp_0.3.0_Linux_arm64.tar.gz"
-    sha256 "c6f16881f00f0f9bbc51c8f0b016d2051275a777cd0cdf91cb70c04d030191cd"
+
+  on_linux do
+    if Hardware::CPU.intel?
+      url "https://github.com/nobishino/ncryp/releases/download/v0.4.0/ncryp_0.4.0_Linux_x86_64.tar.gz"
+      sha256 "ede467cd390a42084f1f512a332e12df68689d16d8443af816c9e488e00b86c0"
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/nobishino/ncryp/releases/download/v0.4.0/ncryp_0.4.0_Linux_arm64.tar.gz"
+      sha256 "0212b18b72973ad7748ab68cc744a1792ef24ea309caa8c281a14123bed474f2"
+    end
   end
 
   def install
