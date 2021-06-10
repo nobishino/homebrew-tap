@@ -5,28 +5,28 @@
 class Ncryp < Formula
   desc "Weak Cryptography for Learners"
   homepage ""
-  version "0.4.0"
+  version "0.4.1"
   bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/nobishino/ncryp/releases/download/v0.4.0/ncryp_0.4.0_Darwin_x86_64.tar.gz"
-      sha256 "4702b379cd6d7f9b43f8c124066ecacd5dbf7f42a84d28eeb2bacdc2843869b1"
+      url "https://github.com/nobishino/ncryp/releases/download/v0.4.1/ncryp_0.4.1_Darwin_x86_64.tar.gz"
+      sha256 "d7e6b66e1f24c8abef8879b2888d4458aa2bd684c42749288cb589c4ee55a214"
     end
     if Hardware::CPU.arm?
-      url "https://github.com/nobishino/ncryp/releases/download/v0.4.0/ncryp_0.4.0_Darwin_arm64.tar.gz"
-      sha256 "c75191359ff76adb6fc54f5e57705c613b715912b71c548d059dfc8d1b6af00d"
+      url "https://github.com/nobishino/ncryp/releases/download/v0.4.1/ncryp_0.4.1_Darwin_arm64.tar.gz"
+      sha256 "e3c594b14fd38a2a028869a940d6eae02e3a632870b253b884368802d7def6ad"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/nobishino/ncryp/releases/download/v0.4.0/ncryp_0.4.0_Linux_x86_64.tar.gz"
-      sha256 "ede467cd390a42084f1f512a332e12df68689d16d8443af816c9e488e00b86c0"
+      url "https://github.com/nobishino/ncryp/releases/download/v0.4.1/ncryp_0.4.1_Linux_x86_64.tar.gz"
+      sha256 "542d48805041c3273130a526e4795338b4c7ea4662608b08500eabf2b232236b"
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/nobishino/ncryp/releases/download/v0.4.0/ncryp_0.4.0_Linux_arm64.tar.gz"
-      sha256 "0212b18b72973ad7748ab68cc744a1792ef24ea309caa8c281a14123bed474f2"
+      url "https://github.com/nobishino/ncryp/releases/download/v0.4.1/ncryp_0.4.1_Linux_arm64.tar.gz"
+      sha256 "d89f3fff51729fb7da8596ad7ce9566c73ac25dfe3d2833664285cdfcdae296e"
     end
   end
 
